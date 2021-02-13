@@ -167,7 +167,7 @@ template
 	font-family: icomoon;
 	font-style: normal;
 	font-weight: 400;
-	src: url(./fonts/icons/calendar.eot?wot3rx#iefix) format("embedded-opentype"),url(./fonts/icons/calendar.ttf?wot3rx) format("truetype"),url(./fonts/icons/calendar.woff?wot3rx) format("woff"),url(./fonts/icons/calendar.svg?wot3rx#calendar) format("svg");
+	src: url(fonts/icons/calendar.eot?wot3rx#iefix) format("embedded-opentype"),url(fonts/icons/calendar.ttf?wot3rx) format("truetype"),url(fonts/icons/calendar.woff?wot3rx) format("woff"),url(fonts/icons/calendar.svg?wot3rx#calendar) format("svg");
 	src: url(fonts/icons/calendar.eot?wot3rx);
 }
 [class*=" icon-"],[class^=icon-]
@@ -187,16 +187,16 @@ template
 }
 .page-wrapper
 {
-	align-items: center;
+	/* align-items: center; */
 	background-color: #dee0e4;
-	display: flex;
-	display: -ms-flexbox;
+	/* display: flex; */
+	/* display: -ms-flexbox; */
 	height: 100vh;
-	justify-content: center;
+	/* justify-content: center;
 	ms-flex-align: center;
 	ms-flex-pack: center;
 	webkit-box-align: center;
-	webkit-box-pack: center;
+	webkit-box-pack: center; */
 }
 .task
 {
@@ -210,6 +210,8 @@ template
 	transition: .5s;
 	webkit-transition: .5s;
 	width: 1045px;
+	margin: 0 auto;
+	transform: translateY(400px);
 }
 .task-active
 {
@@ -221,48 +223,46 @@ template
 }
 .task__rhombus
 {
-	background-color: #dee0e4;
-	height: 40px;
-	left: -80px;
 	position: absolute;
-	top: 30px;
-	transform: rotate(-45deg);
-	webkit-transform: rotate(-45deg);
-	width: 40px;
+	top: -210px;
+	left: -180px;
+	width: 0;
+    height: 0;
+    border-top: 260px solid transparent;
+    border-left: 140px solid #dee0e4;
+    border-bottom: 260px solid transparent
 }
 .task__rhombus-active
 {
-	animation: rhombus .5s ease-out;
-	webkit-animation: rhombus .5s ease-out;
+	animation: rhombus 1s ease-out;
+	webkit-animation: rhombus 1s ease-out;
 }
 @-webkit-keyframes rhombus
 {
 	from
 	{
-		left: -80px;
+		left: -188px;
 	}
-	50%
-	{
-		left: -20px;
+	50% {
+		left: -115px;
 	}
 	to
 	{
-		left: -80px;
+		left: -140px;
 	}
 }
 @keyframes rhombus
 {
 	from
 	{
-		left: -80px;
+		left: -188px;
 	}
-	50%
-	{
-		left: -20px;
+	50% {
+		left: -115px;
 	}
 	to
 	{
-		left: -80px;
+		left: -140px;
 	}
 }
 .task__square
@@ -288,18 +288,41 @@ template
 }
 .task__textarea
 {
+	/* display: inline;
+	padding: 0;
+	margin: 0;
 	border: none;
-	height: 41%;
-	margin-top: 30px;
+	height: 70%;
+	margin-top: 25px;
 	outline: 0;
 	padding-left: 30px;
 	resize: none;
-	width: 70%;
+	width: 60%;
+	overflow: hidden; */
+	position: relative;
+	display: block;
+	height: 70%;
+	min-width: 60%;
+	max-width: 60%;
+	margin-top: 25px;
+	margin-left: 50px;
+	outline: none;
 }
+.task__texarea2 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 70%;
+	min-width: 1px;
+	max-width: 60%;
+}
+/* .task__textarea::-webkit-scrollbar {
+	width: 0;
+} */
 .task__textarea-active
 {
 	background-color: #fff;
-	margin-left: 60px;
+	margin-left: 100px;
 	transition: .5s;
 	webkit-transition: .5s;
 }
@@ -311,12 +334,13 @@ template
 }
 .task__calendar-and-select-wrapper
 {
-	align-items: center;
+	/* align-items: center; */
 	display: flex;
 	display: -ms-flexbox;
 	margin-left: auto;
 	ms-flex-align: center;
 	webkit-box-align: center;
+	margin-top: 20px;
 }
 .task__calendar-and-select-wrapper select
 {
