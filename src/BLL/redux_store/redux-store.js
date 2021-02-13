@@ -1,6 +1,7 @@
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import thunkMiddleWare from "redux-thunk";
 import { compose } from "redux";
+import textAreaReducer from "../textArea/reducer";
 // import loginModalWindowReducer from "../loginModalWindow/reducer";
 // import authUserDataReducer from "../authUserData/reducer";
 // import headerReducer from "../header/reducer";
@@ -11,7 +12,7 @@ import { compose } from "redux";
 
 
 let reducers = combineReducers({
-    // loginModalWindow: loginModalWindowReducer,
+    textArea: textAreaReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

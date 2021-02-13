@@ -1,0 +1,1 @@
+export const TOOGLE_IS_TEXTAREA_ACTIVE = 'dataPrimeTestTask/texArea/TOOGLE_IS_TEXTAREA_ACTIVE';
