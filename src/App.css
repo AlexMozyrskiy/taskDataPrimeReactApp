@@ -286,6 +286,14 @@ template
 	transition: .5s;
 	webkit-transition: .5s;
 }
+.task__textarea-wrapper {
+	height: 70%;
+	min-width: 60%;
+	max-width: 60%;
+	margin-top: 25px;
+	margin-left: 50px;
+	outline: none;
+}
 .task__textarea
 {
 	/* display: inline;
@@ -299,14 +307,15 @@ template
 	resize: none;
 	width: 60%;
 	overflow: hidden; */
-	position: relative;
-	display: block;
-	height: 70%;
+	/* position: relative; */
+	display: inline;
+	outline: none;
+	/* height: 70%;
 	min-width: 60%;
 	max-width: 60%;
 	margin-top: 25px;
 	margin-left: 50px;
-	outline: none;
+	outline: none; */
 }
 .task__texarea2 {
 	position: absolute;

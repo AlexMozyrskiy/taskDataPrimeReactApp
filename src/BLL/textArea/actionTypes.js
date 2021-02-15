@@ -1,1 +1,2 @@
-export const TOOGLE_IS_TEXTAREA_ACTIVE = 'dataPrimeTestTask/texArea/TOOGLE_IS_TEXTAREA_ACTIVE';
+export const TOOGLE_IS_TEXTAREA_ACTIVE = 'dataPrimeTestTask/textArea/TOOGLE_IS_TEXTAREA_ACTIVE';
+export const IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE = 'dataPrimeTestTask/textArea/IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE';
