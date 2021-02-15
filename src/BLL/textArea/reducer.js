@@ -1,10 +1,12 @@
 import {
-    TOOGLE_IS_TEXTAREA_ACTIVE, IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE
+    TOOGLE_IS_TEXTAREA_ACTIVE, IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE,
+    TEXT_IN_FIRST_DIV
 } from "./actionTypes";
 
 const initialState = {
     isTextareaActive: false,
-    isPlaceHolderInFirstDivActive: true
+    isPlaceHolderInFirstDivActive: true,
+    textInFirstDiv: ""
 };
 
 const textAreaReducer = (state = initialState, action) => {
@@ -21,6 +23,14 @@ const textAreaReducer = (state = initialState, action) => {
             const superState = {
                 ...state,
                 isPlaceHolderInFirstDivActive: action.isPlaceHolderInFirstDivActive
+            };
+            return superState;
+        }
+
+        case TEXT_IN_FIRST_DIV: {
+            const superState = {
+                ...state,
+                textInFirstDiv: action.textInFirstDiv
             };
             return superState;
         }

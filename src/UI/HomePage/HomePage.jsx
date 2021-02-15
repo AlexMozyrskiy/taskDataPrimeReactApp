@@ -16,9 +16,9 @@ const HomePage = (props) => {
                         contentEditable="true"
                         style={{ color: props.isTextareaActive ? '#9E9E9D' : '#606469' }}
                         className="task__textarea"
-                        onClick={(e) => props.onTextareaClick(e)}
-                        onInput={(e) => props.onTextareaChange(e.target.offsetHeight, e.target.innerText)}
-                    >{props.taskPlaceHolder === "" ? /* props.taskText */ "" : props.taskPlaceHolder}
+                        onClick={(e) => props.onFirstTextareaClick(e)}
+                        onInput={(e) => props.onFirstTextareaChange(e)}
+                    >{props.isPlaceHolderInFirstDivActive ? props.taskPlaceHolder : props.textInFirstDiv}
                     </div>
 
                     {/* <div contentEditable="true"
