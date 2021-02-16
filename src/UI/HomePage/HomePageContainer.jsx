@@ -34,7 +34,7 @@ const HomePageContainer = (props) => {
 
     function onFirstTextareaChange(e) {             // При изменении в textArea в которой печатем таску (первая текстареа)
         let newText = e.target.innerText;           // Для удобства помести текст печатуемый в текстареи в переменную
-        const twoLactCarInNewText = newText[newText.length - 2] + newText[newText.length - 1];      // два последних символа печатуемого текста. Чтобы отслеживать когда юзер введет "//" и добавлять новые дивы (текстареи)
+        const twoLastCharInNewText = newText[newText.length - 2] + newText[newText.length - 1];      // два последних символа печатуемого текста. Чтобы отслеживать когда юзер введет "//" и добавлять новые дивы (текстареи)
 
         if (props.isPlaceHolderInFirstDivActive) {              // если плейсхолдер активен 
             newText = e.target.innerText[0];         // возьмем из полученного текста первую букву, в противном случае у нас будет текст заканчиваться плейсхолдером
@@ -59,8 +59,19 @@ const HomePageContainer = (props) => {
             props.toogleIsPlaceHolderInFirstDivActive(true);        // Изменим в стейте свойство показывающее активен ли плейсхолдер
         }
 
-        if(twoLactCarInNewText === "//") {
-            // console.log("Два последних символа = " + twoLactCarInNewText);
+        if(twoLastCharInNewText === "//") {                                     // если два последних напечатнных чимвола === "//"
+            // console.log("Два последних символа = " + twoLastCharInNewText);
+            
+        }
+    }
+
+    function colorForFirstTextArea() {                                             // для определения цвета шрифта для первой текстареи в зависимости от состояний в стейте
+        if(props.isTextareaActive && props.isPlaceHolderInFirstDivActive) {
+            return "#9E9E9D";
+        } else if(!props.isTextareaActive && props.isPlaceHolderInFirstDivActive) {
+            return "#606469";
+        } else if(props.isTextareaActive && !props.isPlaceHolderInFirstDivActive) {
+            return "#000";
         }
     }
 
@@ -75,6 +86,7 @@ const HomePageContainer = (props) => {
             taskPlaceHolder={taskPlaceHolder}
             textInFirstDiv={props.textInFirstDiv}
             setCaretToIndex={setCaretToIndex}
+            colorForFirstTextArea={colorForFirstTextArea}
         />
     );
 }

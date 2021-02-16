@@ -9,7 +9,7 @@ const initialState = {
     textInFirstDiv: ""
 };
 
-const textAreaReducer = (state = initialState, action) => {
+const textAreaInFirstDivReducer = (state = initialState, action) => {
     switch (action.type) {
         case TOOGLE_IS_TEXTAREA_IN_FIRST_DIV_ACTIVE: {
             const superState = {
@@ -39,4 +39,4 @@ const textAreaReducer = (state = initialState, action) => {
     }
 };
 
-export default textAreaReducer;
+export default textAreaInFirstDivReducer;

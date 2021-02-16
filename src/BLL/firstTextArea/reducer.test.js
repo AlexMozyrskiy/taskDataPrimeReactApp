@@ -2,7 +2,7 @@ import {
     toogleIsTextAreaInFirstDivActive, toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState
 } from "./actionCreators";
-import textAreaReducer from "./reducer";
+import textAreaInFirstDivReducer from "./reducer";
 
 
 let initialState = {
@@ -17,7 +17,7 @@ it("Тест при клике на текстарею свойство isTextAr
     let action = toogleIsTextAreaInFirstDivActive(true);
 
     // 2. action
-    let newState = textAreaReducer(initialState, action);
+    let newState = textAreaInFirstDivReducer(initialState, action);
 
     // 3. expectation
     expect(newState.isTextAreaInFirstDivActive).toBe(true);
@@ -30,7 +30,7 @@ it("Тест при клике на текстарею свойство isTextAr
     let action = toogleIsTextAreaInFirstDivActive(false);
 
     // 2. action
-    let newState = textAreaReducer(initialState, action);
+    let newState = textAreaInFirstDivReducer(initialState, action);
 
     // 3. expectation
     expect(newState.isTextAreaInFirstDivActive).toBe(false);
@@ -44,7 +44,7 @@ it("Тест когда юзер начинает печатать в перво
     let action = toogleIsPlaceHolderInFirstDivActive(false);
 
     // 2. action
-    let newState = textAreaReducer(initialState, action);
+    let newState = textAreaInFirstDivReducer(initialState, action);
 
     // 3. expectation
     expect(newState.isPlaceHolderInFirstDivActive).toBe(false);
@@ -57,7 +57,7 @@ it("Тест когда юзер начинает печатать в перво
     let action = toogleIsPlaceHolderInFirstDivActive(true);
 
     // 2. action
-    let newState = textAreaReducer(initialState, action);
+    let newState = textAreaInFirstDivReducer(initialState, action);
 
     // 3. expectation
     expect(newState.isPlaceHolderInFirstDivActive).toBe(true);
@@ -72,7 +72,7 @@ it("Тест когда юзер печатает в первом диве textI
     let action = setTextInFirstDivInState(textInFirstDiv);
 
     // 2. action
-    let newState = textAreaReducer(initialState, action);
+    let newState = textAreaInFirstDivReducer(initialState, action);
 
     // 3. expectation
     expect(newState.textInFirstDiv).toBe(textInFirstDiv);

@@ -1,3 +1,3 @@
-export const TOOGLE_IS_TEXTAREA_IN_FIRST_DIV_ACTIVE = 'dataPrimeTestTask/textArea/TOOGLE_IS_TEXTAREA_IN_FIRST_DIV_ACTIVE';
-export const IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE = 'dataPrimeTestTask/textArea/IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE';      // Плейсхолдер в первом диве(в котором юзер печатет таску)
-export const TEXT_IN_FIRST_DIV = 'dataPrimeTestTask/textArea/TEXT_IN_FIRST_DIV';                                        // Текст печатуемый в первом диве(в котором юзер печатет таску)
+export const TOOGLE_IS_TEXTAREA_IN_FIRST_DIV_ACTIVE = 'dataPrimeTestTask/textAreaInFirstDiv/TOOGLE_IS_TEXTAREA_IN_FIRST_DIV_ACTIVE';
+export const IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE = 'dataPrimeTestTask/textAreaInFirstDiv/IS_PLACEHOLDER_IN_FIRST_DIV_ACTIVE';      // Плейсхолдер в первом диве(в котором юзер печатет таску)
+export const TEXT_IN_FIRST_DIV = 'dataPrimeTestTask/textAreaInFirstDiv/TEXT_IN_FIRST_DIV';                                        // Текст печатуемый в первом диве(в котором юзер печатет таску)

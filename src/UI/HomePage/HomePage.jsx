@@ -15,12 +15,14 @@ const HomePage = (props) => {
                     <div 
                         suppressContentEditableWarning="true"
                         contentEditable="true"
-                        style={{ color: props.isTextareaActive ? '#9E9E9D' : '#606469' }}
-                        className="task__textarea"
+                        style={{ color: props.colorForFirstTextArea() }}
+                        className="task__first-textarea"
                         onClick={(e) => props.onFirstTextareaClick(e)}
                         onInput={(e) => props.onFirstTextareaChange(e)}
                     >{props.isPlaceHolderInFirstDivActive ? props.taskPlaceHolder : props.textInFirstDiv}
                     </div>
+
+                    <div className="task__second-texarea">//</div>
 
                     {/* <div contentEditable="true"
                         className="task__textarea"

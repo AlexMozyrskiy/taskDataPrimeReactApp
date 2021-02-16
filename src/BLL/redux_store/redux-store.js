@@ -1,18 +1,12 @@
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import thunkMiddleWare from "redux-thunk";
 import { compose } from "redux";
-import textAreaReducer from "../firstTextArea/reducer";
-// import loginModalWindowReducer from "../loginModalWindow/reducer";
-// import authUserDataReducer from "../authUserData/reducer";
-// import headerReducer from "../header/reducer";
-// import initializedAppReducer from "../initializedApp/reducer";
-// import notOwnerUserDataReducer from "../notOwnerUserData/reducer";
-// import ownerProfilePageReducer from "../ownerProfilePage/reducer";
-// import usersReducers from "../users/reducer";
-
+import textAreaInFirstDivReducer from "../firstTextArea/reducer";
+import textAreaInSecondDivReducer from "../secondTextArea/reducer";
 
 let reducers = combineReducers({
-    textArea: textAreaReducer
+  textAreaInFirstDiv: textAreaInFirstDivReducer,
+  textAreaInSecondDiv: textAreaInSecondDivReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
