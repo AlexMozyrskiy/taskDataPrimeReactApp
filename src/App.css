@@ -329,7 +329,7 @@ template
 	left: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
-	animation: twoSlashas .75s;
+	animation: twoSlashas .9s;
 }
 @keyframes twoSlashas {
 	0% {

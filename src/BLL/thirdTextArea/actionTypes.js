@@ -1,0 +1,3 @@
+export const TOOGLE_IS_TEXTAREA_IN_THIRD_DIV_ACTIVE = 'dataPrimeTestTask/textAreaInThirdDiv/TOOGLE_IS_TEXTAREA_IN_THIRD_DIV_ACTIVE';
+export const IS_PLACEHOLDER_IN_THIRD_DIV_ACTIVE = 'dataPrimeTestTask/textAreaInThirdDiv/IS_PLACEHOLDER_IN_THIRD_DIV_ACTIVE';
+export const TEXT_IN_THIRD_DIV = 'dataPrimeTestTask/textAreaInThirdDiv/TEXT_IN_THIRD_DIV';

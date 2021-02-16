@@ -12,7 +12,7 @@ const HomePage = (props) => {
                     style={{ height: props.textareaHeight + 'px' }}
                 >
 
-                    <div 
+                    <div
                         suppressContentEditableWarning="true"
                         contentEditable="true"
                         style={{ color: props.colorForFirstTextArea() }}
@@ -22,14 +22,21 @@ const HomePage = (props) => {
                     >{props.isPlaceHolderInFirstDivActive ? props.taskPlaceHolder : props.textInFirstDiv}
                     </div>
 
-                    { props.isTextAreaInSecondDivActive ? <div className="task__second-texarea"><div class="task__two-slash-animation"></div>//</div> : null}
+                    {props.isTextAreaInSecondDivActive ? <div className="task__second-texarea"><div className="task__two-slash-animation"></div>//</div> : null}
 
-                    {/* <div contentEditable="true" 
-                        className="task__textarea"
-                        // placeholder="Write a new task"
-                        onInput={(e) => props.onTextareaChange(e.target.offsetHeight, e.target.innerText)}
-                    >{props.taskPlaceHolder === "" ? props.taskText : props.taskPlaceHolder}
-                    </div> */}
+                    {
+                        props.isTextAreaInThirdDivActive
+                            ? <div
+                                suppressContentEditableWarning="true"
+                                contentEditable="true"
+                                style={{ color: props.colorForFirstTextArea() }}
+                                className="task__first-textarea"
+                                onClick={(e) => props.onFirstTextareaClick(e)}
+                                onInput={(e) => props.onFirstTextareaChange(e)}
+                            >{props.isPlaceHolderInThirdDivActive ? props.notePlaceHolder : props.textInThirdDiv}
+                            </div>
+                            : null
+                    }
 
                 </div>
 

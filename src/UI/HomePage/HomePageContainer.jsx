@@ -4,11 +4,19 @@ import {
     getIsTextAreaInFirstDivActiveSelector, getIsPlaceHolderInFirstDivActiveSelector,
     getTextInFirstDivSelector
 } from "../../BLL/firstTextArea/selectors";
+import {
+    getIsTextAreaInThirdDivActiveSelector, getiIsPlaceHolderInThirdDivActiveSelector,
+    getTextInThirdDivSelector
+} from "../../BLL/thirdTextArea/selectors";
 import { getIsTextAreaInSecondDivActiveSelector } from "../../BLL/secondTextArea/selectors";
 import {
     toogleIsTextAreaInFirstDivActive, toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState
 } from "../../BLL/firstTextArea/actionCreators";
+import {
+    toogleIsTextAreaInThirdDivActive, toogleIsPlaceHolderInThirdDivActive,
+    setTextInThirdDivInState
+} from "../../BLL/thirdTextArea/actionCreators";
 import { toogleIsTextAreaInSecondDivActive } from "../../BLL/secondTextArea/actionCreators";
 import { connect } from "react-redux";
 import setCaretToStart from "../../helpers/setCaretToStartOfLine/setCaretToStart";
@@ -21,7 +29,9 @@ const HomePageContainer = (props) => {
     let [taskHeight, changeTaskHeight] = useState(100);             // высота основного враппера, бем менять в зависимости от высоты текстареи(scrollHeight), чтобы полоса прокрутки не появлялась
 
     const placeHolderTextInFirstTextArea = "Write a new task";
+    const placeHolderTextInThirdTextArea = "write note";
     let [taskPlaceHolder, changeTaskPlaceHolder] = useState(placeHolderTextInFirstTextArea);        // Плейсхолдер для первого дива (с таском который)
+    let [notePlaceHolder, changeNotePlaceHolder] = useState(placeHolderTextInThirdTextArea);        // Плейсхолдер для первого дива (с таском который)
 
     function onFirstTextareaClick(e) {                           // При клике на textArea
         if (!props.isTextareaActive) {                       // Если она не активна
@@ -67,6 +77,8 @@ const HomePageContainer = (props) => {
             newTextInArr.length = newTextInArr.length - 2;                      // удаляем последние 2 символа
             newText = newTextInArr.join('');                                    // соединяем обратно в строку
             props.setTextInFirstDivInState(newText);                            // изменим текст в стейте
+
+            props.toogleIsTextAreaInThirdDivActive(true);                      // активируем второй див
         }
     }
 
@@ -92,7 +104,11 @@ const HomePageContainer = (props) => {
             textInFirstDiv={props.textInFirstDiv}
             setCaretToIndex={setCaretToIndex}
             colorForFirstTextArea={colorForFirstTextArea}
-            isTextAreaInSecondDivActive={props.isTextAreaInSecondDivActive} 
+            isTextAreaInSecondDivActive={props.isTextAreaInSecondDivActive}
+            isTextAreaInThirdDivActive={props.isTextAreaInThirdDivActive}
+            isPlaceHolderInThirdDivActive={props.isPlaceHolderInThirdDivActive}
+            textInThirdDiv={props.textInThirdDiv}
+            notePlaceHolder={notePlaceHolder}
         />
     );
 }
@@ -102,7 +118,10 @@ const mapStateToProps = (state) => {
         isTextareaActive: getIsTextAreaInFirstDivActiveSelector(state),
         isPlaceHolderInFirstDivActive: getIsPlaceHolderInFirstDivActiveSelector(state),
         textInFirstDiv: getTextInFirstDivSelector(state),
-        isTextAreaInSecondDivActive: getIsTextAreaInSecondDivActiveSelector(state)
+        isTextAreaInSecondDivActive: getIsTextAreaInSecondDivActiveSelector(state),
+        isTextAreaInThirdDivActive: getIsTextAreaInThirdDivActiveSelector(state),
+        isPlaceHolderInThirdDivActive: getiIsPlaceHolderInThirdDivActiveSelector(state),
+        textInThirdDiv: getTextInThirdDivSelector(state)
     }
 }
 
@@ -110,7 +129,10 @@ const mapDispatchToProps = {
     toogleIsTextAreaInFirstDivActive,
     toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState,
-    toogleIsTextAreaInSecondDivActive
+    toogleIsTextAreaInSecondDivActive,
+    toogleIsTextAreaInThirdDivActive,
+    toogleIsPlaceHolderInThirdDivActive,
+    setTextInThirdDivInState
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePageContainer);

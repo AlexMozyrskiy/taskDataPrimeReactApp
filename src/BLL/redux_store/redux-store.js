@@ -3,10 +3,12 @@ import thunkMiddleWare from "redux-thunk";
 import { compose } from "redux";
 import textAreaInFirstDivReducer from "../firstTextArea/reducer";
 import textAreaInSecondDivReducer from "../secondTextArea/reducer";
+import textAreaInThirdDivReducer from "../thirdTextArea/reducer";
 
 let reducers = combineReducers({
   textAreaInFirstDiv: textAreaInFirstDivReducer,
-  textAreaInSecondDiv: textAreaInSecondDivReducer
+  textAreaInSecondDiv: textAreaInSecondDivReducer,
+  textAreaInThirdDiv: textAreaInThirdDivReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
