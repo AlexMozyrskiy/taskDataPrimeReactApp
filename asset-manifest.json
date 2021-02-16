@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/taskDataPrimeReactApp/static/css/main.47604516.chunk.css",
+    "main.js": "/taskDataPrimeReactApp/static/js/main.47e8d00b.chunk.js",
+    "main.js.map": "/taskDataPrimeReactApp/static/js/main.47e8d00b.chunk.js.map",
+    "runtime-main.js": "/taskDataPrimeReactApp/static/js/runtime-main.65777d39.js",
+    "runtime-main.js.map": "/taskDataPrimeReactApp/static/js/runtime-main.65777d39.js.map",
+    "static/js/2.23316cca.chunk.js": "/taskDataPrimeReactApp/static/js/2.23316cca.chunk.js",
+    "static/js/2.23316cca.chunk.js.map": "/taskDataPrimeReactApp/static/js/2.23316cca.chunk.js.map",
+    "static/js/3.86b22b21.chunk.js": "/taskDataPrimeReactApp/static/js/3.86b22b21.chunk.js",
+    "static/js/3.86b22b21.chunk.js.map": "/taskDataPrimeReactApp/static/js/3.86b22b21.chunk.js.map",
+    "index.html": "/taskDataPrimeReactApp/index.html",
+    "static/css/main.47604516.chunk.css.map": "/taskDataPrimeReactApp/static/css/main.47604516.chunk.css.map",
+    "static/js/2.23316cca.chunk.js.LICENSE.txt": "/taskDataPrimeReactApp/static/js/2.23316cca.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/taskDataPrimeReactApp/static/media/calendar.6443f472.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65777d39.js",
+    "static/js/2.23316cca.chunk.js",
+    "static/css/main.47604516.chunk.css",
+    "static/js/main.47e8d00b.chunk.js"
+  ]
+}
