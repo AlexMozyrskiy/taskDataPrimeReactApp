@@ -1,41 +1,41 @@
 import {
-    toogleIsTextAreaActive, toogleIsPlaceHolderInFirstDivActive,
+    toogleIsTextAreaInFirstDivActive, toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState
 } from "./actionCreators";
 import textAreaReducer from "./reducer";
 
 
 let initialState = {
-    isTextareaActive: false,
+    isTextAreaInFirstDivActive: false,
     isPlaceHolderInFirstDivActive: true,
     textInFirstDiv: ""
 };
 
-/* Тест при клике на текстарею свойство isTextareaActive меняется на то что отправили в action - в данном тесте true */
-it("Тест при клике на текстарею свойство isTextareaActive меняется на то что отправили в action - в данном тесте true", () => {
+/* Тест при клике на текстарею свойство isTextAreaInFirstDivActive меняется на то что отправили в action - в данном тесте true */
+it("Тест при клике на текстарею свойство isTextAreaInFirstDivActive меняется на то что отправили в action - в данном тесте true", () => {
     // 1. test data
-    let action = toogleIsTextAreaActive(true);
+    let action = toogleIsTextAreaInFirstDivActive(true);
 
     // 2. action
     let newState = textAreaReducer(initialState, action);
 
     // 3. expectation
-    expect(newState.isTextareaActive).toBe(true);
+    expect(newState.isTextAreaInFirstDivActive).toBe(true);
 });
-/* / Тест при клике на текстарею свойство isTextareaActive меняется на то что отправили в action - в данном тесте true */
+/* / Тест при клике на текстарею свойство isTextAreaInFirstDivActive меняется на то что отправили в action - в данном тесте true */
 
-/* Тест при клике на текстарею свойство isTextareaActive меняется на то что отправили в action - в данном тесте false */
-it("Тест при клике на текстарею свойство isTextareaActive меняется на то что отправили в action - в данном тесте false", () => {
+/* Тест при клике на текстарею свойство isTextAreaInFirstDivActive меняется на то что отправили в action - в данном тесте false */
+it("Тест при клике на текстарею свойство isTextAreaInFirstDivActive меняется на то что отправили в action - в данном тесте false", () => {
     // 1. test data
-    let action = toogleIsTextAreaActive(false);
+    let action = toogleIsTextAreaInFirstDivActive(false);
 
     // 2. action
     let newState = textAreaReducer(initialState, action);
 
     // 3. expectation
-    expect(newState.isTextareaActive).toBe(false);
+    expect(newState.isTextAreaInFirstDivActive).toBe(false);
 });
-/* / Тест при клике на текстарею свойство isTextareaActive меняется на то что отправили в action - в данном тесте false */
+/* / Тест при клике на текстарею свойство isTextAreaInFirstDivActive меняется на то что отправили в action - в данном тесте false */
 
 
 /* Тест когда юзер начинает печатать в первом диву isPlaceHolderInFirstDivActive меняется на то что отправили в action - в данном тесте false */

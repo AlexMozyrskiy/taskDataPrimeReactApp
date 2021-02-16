@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import HomePage from "./HomePage";
 import {
-    getIsTextAreaActiveSelector, getIsPlaceHolderInFirstDivActiveSelector,
+    getIsTextAreaInFirstDivActiveSelector, getIsPlaceHolderInFirstDivActiveSelector,
     getTextInFirstDivSelector
 } from "../../BLL/firstTextArea/selectors";
 import {
-    toogleIsTextAreaActive, toogleIsPlaceHolderInFirstDivActive,
+    toogleIsTextAreaInFirstDivActive, toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState
 } from "../../BLL/firstTextArea/actionCreators";
 import { connect } from "react-redux";
@@ -23,7 +23,7 @@ const HomePageContainer = (props) => {
 
     function onFirstTextareaClick(e) {                           // При клике на textArea
         if (!props.isTextareaActive) {                       // Если она не активна
-            props.toogleIsTextAreaActive(true);             // сделаем ее активной
+            props.toogleIsTextAreaInFirstDivActive(true);             // сделаем ее активной
             changeTextareaHeight(e.target.offsetHeight);    // запишем первоночальную высоту текстареи (когда 1 строка) в переменную в стейте
             setCaretToStart(e.target);                      // функция хелпер, перемещающая каретку в началос строки
         } else if (props.isTextareaActive && props.isPlaceHolderInFirstDivActive) {       // если она активна, но плейсхолдер еще есть
@@ -81,14 +81,14 @@ const HomePageContainer = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isTextareaActive: getIsTextAreaActiveSelector(state),
+        isTextareaActive: getIsTextAreaInFirstDivActiveSelector(state),
         isPlaceHolderInFirstDivActive: getIsPlaceHolderInFirstDivActiveSelector(state),
         textInFirstDiv: getTextInFirstDivSelector(state)
     }
 }
 
 const mapDispatchToProps = {
-    toogleIsTextAreaActive,
+    toogleIsTextAreaInFirstDivActive,
     toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState,
     setCaretToIndex

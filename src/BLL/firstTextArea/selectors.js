@@ -1,5 +1,5 @@
-export const getIsTextAreaActiveSelector =  (state) => {
-    return state.textArea.isTextareaActive;
+export const getIsTextAreaInFirstDivActiveSelector =  (state) => {
+    return state.textArea.isTextAreaInFirstDivActive;
 }
 
 export const getIsPlaceHolderInFirstDivActiveSelector =  (state) => {

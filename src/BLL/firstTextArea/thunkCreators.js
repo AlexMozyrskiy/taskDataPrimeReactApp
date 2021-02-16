@@ -1,5 +1,5 @@
 import {
-    toogleIsTextAreaActive
+    toogleIsTextAreaInFirstDivActive
 } from "./actionCreators";
 
 // export const isAuthThunkCreator = () => async (dispatch) => {
