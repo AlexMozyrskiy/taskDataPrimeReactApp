@@ -4,8 +4,6 @@
 */
 function setCaretToEnd(el) {
 
-    // console.log(el);
-
     /*
         Тут Мы высталяем курсор в начало строки, а если передать в range.collapse(false); каретка выставится в конец строки.
         Важно применить window.getSelection().removeAllRanges();, чтобы каретка стерлась из места строки куда мы кликнули.

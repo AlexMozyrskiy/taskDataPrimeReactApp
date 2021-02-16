@@ -16,7 +16,6 @@ function setCaretToIndex(el, index) {
     window.getSelection().removeAllRanges();
 
     window.getSelection().addRange(range);    // применим этот диапазон к выделению документа
-    debugger
 }
 
 export default setCaretToIndex;

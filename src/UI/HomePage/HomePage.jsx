@@ -41,7 +41,7 @@ const HomePage = (props) => {
                 </div>
 
                 <div className={cn("task__calendar-and-select-wrapper", { "displayNone": !props.isTextareaInFirstDivActive })}>
-                    <div className="task__calendar"><p className="icon-calendar"></p></div>
+                    <div className="task__calendar"></div>
                     <select defaultValue="1">
                         <option>No List</option>
                         <option>List 1</option>

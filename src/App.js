@@ -1,6 +1,5 @@
 import './App.css';
 import { Route, Switch } from "react-router-dom";
-// import NotFoundPage from "./UI/NotFoundPage";
 import HomePageContainer from "./UI/HomePage/HomePageContainer";
 import NotFoundPage from './UI/NotFoundPage/NotFoundPage';
 
