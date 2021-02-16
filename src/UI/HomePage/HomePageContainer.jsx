@@ -43,7 +43,7 @@ const HomePageContainer = (props) => {
     // ---------- / useState -----------------------------------
 
 
-    // ------------ Функция при клике на текстарею -------------------------------------------
+    // ------------ Функция при клике на первую текстарею -------------------------------------------
     function onFirstTextareaClick(e) {                      // При клике на textArea
         if (!props.isTextareaInFirstDivActive) {                      // Если она не активна
             props.toogleIsTextAreaInFirstDivActive(true);   // сделаем ее активной
@@ -55,7 +55,7 @@ const HomePageContainer = (props) => {
             setCaretToStart(e.target);                      // функция хелпер, перемещающая каретку в начало строки
         }
     }
-    // ------------ / Функция при клике на текстарею -------------------------------------------
+    // ------------ / Функция при клике на первую текстарею -------------------------------------------
 
 
     // ------------ Функция при вводе в первую текстарею символа -------------------------------------------
@@ -142,9 +142,9 @@ const HomePageContainer = (props) => {
             props.toogleIsTextAreaInThirdDivActive(false);                      // Изменим в стейте свойство показывающее активен ли текст в третьей тексареи
             props.toogleIsTextAreaInSecondDivActive(false);                     // Изменим в стейте свойство показывающее активна ли вторая текстареа
 
-            let textInFirstDiv = props.textInFirstDiv + "/";
-            props.setTextInFirstDivInState(textInFirstDiv);     // изменим текст в стейте
-            focusOnElement("task__first-textarea", false);
+            let textInFirstDiv = props.textInFirstDiv + "/";                    // так как мы стерли первый слэш конкатенируем к тексту в первой текстареи один слеш
+            props.setTextInFirstDivInState(textInFirstDiv);                     // изменим текст в стейте
+            focusOnElement("task__first-textarea", false);                      // сфокусируемся на первой текстареи
         }
     }
     // ------------ / Функция при вводе в третью текстарею символа -----------------------------------------
