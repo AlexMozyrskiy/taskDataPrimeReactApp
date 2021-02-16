@@ -292,7 +292,7 @@ template
 	max-width: 60%;
 	margin-top: 25px;
 	margin-left: 50px;
-	outline: none;
+	/* outline: none; */
 }
 .task__textarea
 {
@@ -309,7 +309,7 @@ template
 	overflow: hidden; */
 	/* position: relative; */
 	display: inline;
-	outline: none;
+	/* outline: none; */
 	/* height: 70%;
 	min-width: 60%;
 	max-width: 60%;

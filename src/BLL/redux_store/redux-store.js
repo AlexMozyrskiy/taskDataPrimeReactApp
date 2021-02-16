@@ -1,7 +1,7 @@
 import {createStore, combineReducers, applyMiddleware} from "redux";
 import thunkMiddleWare from "redux-thunk";
 import { compose } from "redux";
-import textAreaReducer from "../textArea/reducer";
+import textAreaReducer from "../firstTextArea/reducer";
 // import loginModalWindowReducer from "../loginModalWindow/reducer";
 // import authUserDataReducer from "../authUserData/reducer";
 // import headerReducer from "../header/reducer";

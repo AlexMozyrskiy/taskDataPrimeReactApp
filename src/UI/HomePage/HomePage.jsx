@@ -13,6 +13,7 @@ const HomePage = (props) => {
                 >
 
                     <div 
+                        suppressContentEditableWarning="true"
                         contentEditable="true"
                         style={{ color: props.isTextareaActive ? '#9E9E9D' : '#606469' }}
                         className="task__textarea"
