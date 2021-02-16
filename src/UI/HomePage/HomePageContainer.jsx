@@ -4,10 +4,12 @@ import {
     getIsTextAreaInFirstDivActiveSelector, getIsPlaceHolderInFirstDivActiveSelector,
     getTextInFirstDivSelector
 } from "../../BLL/firstTextArea/selectors";
+import { getIsTextAreaInSecondDivActiveSelector } from "../../BLL/secondTextArea/selectors";
 import {
     toogleIsTextAreaInFirstDivActive, toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState
 } from "../../BLL/firstTextArea/actionCreators";
+import { toogleIsTextAreaInSecondDivActive } from "../../BLL/secondTextArea/actionCreators";
 import { connect } from "react-redux";
 import setCaretToStart from "../../helpers/setCaretToStartOfLine/setCaretToStart";
 import setCaretToEnd from "../../helpers/setCaretToEndOfLine/setCaretToEnd";
@@ -59,9 +61,12 @@ const HomePageContainer = (props) => {
             props.toogleIsPlaceHolderInFirstDivActive(true);        // Изменим в стейте свойство показывающее активен ли плейсхолдер
         }
 
-        if(twoLastCharInNewText === "//") {                                     // если два последних напечатнных чимвола === "//"
-            // console.log("Два последних символа = " + twoLastCharInNewText);
-            
+        if(twoLastCharInNewText === "//") {                                     // если два последних напечатнных символа === "//"
+            props.toogleIsTextAreaInSecondDivActive(true);                      // активируем второй див
+            let newTextInArr = newText.split('');                               // в массив введенную строку чтобы удалить последние смиволы "//" из первой текстареи
+            newTextInArr.length = newTextInArr.length - 2;                      // удаляем последние 2 символа
+            newText = newTextInArr.join('');                                    // соединяем обратно в строку
+            props.setTextInFirstDivInState(newText);                            // изменим текст в стейте
         }
     }
 
@@ -87,6 +92,7 @@ const HomePageContainer = (props) => {
             textInFirstDiv={props.textInFirstDiv}
             setCaretToIndex={setCaretToIndex}
             colorForFirstTextArea={colorForFirstTextArea}
+            isTextAreaInSecondDivActive={props.isTextAreaInSecondDivActive} 
         />
     );
 }
@@ -95,7 +101,8 @@ const mapStateToProps = (state) => {
     return {
         isTextareaActive: getIsTextAreaInFirstDivActiveSelector(state),
         isPlaceHolderInFirstDivActive: getIsPlaceHolderInFirstDivActiveSelector(state),
-        textInFirstDiv: getTextInFirstDivSelector(state)
+        textInFirstDiv: getTextInFirstDivSelector(state),
+        isTextAreaInSecondDivActive: getIsTextAreaInSecondDivActiveSelector(state)
     }
 }
 
@@ -103,7 +110,7 @@ const mapDispatchToProps = {
     toogleIsTextAreaInFirstDivActive,
     toogleIsPlaceHolderInFirstDivActive,
     setTextInFirstDivInState,
-    setCaretToIndex
+    toogleIsTextAreaInSecondDivActive
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePageContainer);

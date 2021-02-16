@@ -22,9 +22,9 @@ const HomePage = (props) => {
                     >{props.isPlaceHolderInFirstDivActive ? props.taskPlaceHolder : props.textInFirstDiv}
                     </div>
 
-                    <div className="task__second-texarea">//</div>
+                    { props.isTextAreaInSecondDivActive ? <div className="task__second-texarea"><div class="task__two-slash-animation"></div>//</div> : null}
 
-                    {/* <div contentEditable="true"
+                    {/* <div contentEditable="true" 
                         className="task__textarea"
                         // placeholder="Write a new task"
                         onInput={(e) => props.onTextareaChange(e.target.offsetHeight, e.target.innerText)}

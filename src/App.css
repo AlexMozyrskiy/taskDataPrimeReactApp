@@ -319,6 +319,35 @@ template
 }
 .task__second-texarea {
 	display: inline;
+	position: relative;
+	border-radius: 50%;
+	color: #7F6233;
+}
+.task__two-slash-animation {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	animation: twoSlashas .75s;
+}
+@keyframes twoSlashas {
+	0% {
+		opacity: 0.5;
+		width: 20px;
+		height: 20px;
+		background-color: none;
+	}
+	50% {
+		opacity: 0.05;
+		background-color: #C85D36;
+		width: 100px;
+		height: 100px;
+	}
+	100% {
+		opacity: 0;
+		background-color: none;
+	}
 }
 /* .task__texarea2 {
 	position: absolute;
